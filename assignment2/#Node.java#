@@ -1,0 +1,53 @@
+public class Node {
+
+    private Node downChild;
+    private Node upChild;
+    private Node parent;
+    private double percentVal;
+
+    public Node(Node downChild = NULL, Node upChild = NULL, Node parent = Null, double percentVal ){
+        this.downChild = downChild;
+        this.upChild = upChild;
+        this.parent = parent;
+        this.percentVal = percentVal;
+    }
+
+    public Node getDownChild(){
+        return downChild;
+    }
+
+    public Node getUpChild(){
+        return upChild;
+    }
+
+    public Node getParent(){
+        return parent;
+    }
+
+    public double getPercentVal(){
+	return percentVal;
+    }
+
+
+    
+
+}
+
+/*Recursive function that is run n times and bascially creates a new node one it gets to 0000000000,
+*
+*   store price as a instance variable
+*
+*
+*  return NODE createTree(depth){
+*       if(depth = 1){
+*            return NOde(NULL, NULL, NULL, percentVal);
+*       }
+*       Node left = createTree(depth--);
+*       Node Right = create Tree(depth --);
+*
+*       return (left, right, NULL, price)
+*  }
+*
+*
+*
+* */

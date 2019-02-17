@@ -21,8 +21,29 @@ public final class BinaomialTreeFactory {
 
 
     private Node root; //no becuse how do we traverse it? Navigate???? Where do the go left/go right functions go????
+    private int depth;
+    private int percentage;
+
 
     // I think they just go in navigate??
+
+
+    public BinaomialTreeFactory(int T, int P){
+        this.depth = T;
+        this.percentage = P;
+    }
+
+    public void createTree(){
+        root = create(depth, percentage);
+    }
+
+    public Node getRoot(){
+        return this.root;
+    }
+
+    public void setRoot(Node root){
+        this.root = root;
+    }
 
 
 
@@ -36,7 +57,6 @@ public final class BinaomialTreeFactory {
             Node rightNode = create(T, P);
             return new Node(leftNode, rightNode, null, P);
         }
-
     }
 
 

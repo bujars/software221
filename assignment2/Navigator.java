@@ -41,8 +41,8 @@ public class Navigator {
     */
 
     /*This function is used to create a tree, navigate through the tree, and etc...*/
-    public void navigate(int depth, int percentage, int iterations) {
-        Node tree = BinaomialTreeFactory.create(depth,percentage);
+    public void navigate(Node tree int percentage, int iterations) {
+        //Node tree = BinaomialTreeFactory.create(depth,percentage);
         //create();
         //Node root = tree.create(depth, percentage);
         Node treeTraverse = tree; /*This will be used to go back and fourth*/

@@ -49,7 +49,7 @@ public final class BinaomialTreeFactory {
 
     /*This is the recursive function that creates the node????*/
     public static Node create(int T, int P){
-        if(T == 0) {
+        if(T == 1) {
             return new Node(null, null, null, P);
         } else {
             T--; /*Decrement T*/

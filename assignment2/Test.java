@@ -7,12 +7,19 @@ public class Test {
         //System.out.println("HI");
         //String text = input.nextLine();
        // System.out.println(text);
-        int d = input.nextInt();
-        int p = input.nextInt();
-        int i = input.nextInt();
+        System.out.println("Please enter the depth of the tree");
+        int depth = input.nextInt();
+        System.out.println("Please enter the percentage of the tree");
+        int percent = input.nextInt();
+        System.out.println("Please enter the number of times to interate in the tree");
+        int iteration = input.nextInt();
+
+        System.out.println("One moment please.\n");
+
+        Node tree = BinaomialTreeFactory.create(depth, percent);
 
         Navigator nav = new Navigator();
-        nav.navigate(d, p, i);
+        nav.navigate(tree, iteration);
 
 
 

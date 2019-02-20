@@ -4,65 +4,29 @@ import java.security.SecureRandom;
 
 public class Navigator {
 
-    //private int iterations; /*Mod this by the depth of the tree to see how many times it loops around.*/
-    /*private int depth;
-    private int percentage;
 
-    public Navigator(int depth, int percentage, int iterations) {
-        this.iterations = iterations;
-        this.depth = depth;
-        this.percentage = percentage;
-    }
+    public void navigate(Node tree, int iterations) {
+        Node treeTraverse = tree; /*This will be used to go back and fourth.*/
 
-    public int getIterations() {
-        return this.iterations;
-    }
-
-    public void setIterations(int iterations) {
-        this.iterations = iterations;
-    }
-
-    public int getDepth() {
-        return this.depth;
-    }
-
-    public void setDepth(int depth) {
-        this.depth = depth;
-    }
-
-    public int getPercentage() {
-        return this.percentage;
-    }
-
-    public void setPercentage(int percentage) {
-        this.percentage = percentage;
-    }
-
-    */
-
-    /*This function is used to create a tree, navigate through the tree, and etc...*/
-    public void navigate(Node tree int percentage, int iterations) {
-        //Node tree = BinaomialTreeFactory.create(depth,percentage);
-        //create();
-        //Node root = tree.create(depth, percentage);
-        Node treeTraverse = tree; /*This will be used to go back and fourth*/
-        int tempIterations = iterations;
-
+        int time = 1;
         for(int i = 0; i < iterations; i++){
-            while(treeTraverse!=null){
+            while(treeTraverse!=null){ /*NOTE THIS ends before end.*/
                 SecureRandom random = new SecureRandom();
                 int rand = random.nextInt(101);
-                if(tree.getPercentVal() <= rand){ /*NOTE I made the option to do greater or equal to*/
+                if((tree.getUpChild()).getPercentVal() <= rand){ /*NOTE I made the option to do greater or equal to*/
                     treeTraverse = treeTraverse.getUpChild();
-                    System.out.println("Percent: " + rand + ". Direction: Up.");
+                    System.out.println("Time: " + time + ". Percent: " + rand + ". Direction: Up.");
                 }
                 else{
                     treeTraverse = treeTraverse.getDownChild();
-                    System.out.println("Percent: " + rand + ". Direction: Down.");
+                    System.out.println("Time: " + time + ". Percent: " + rand + ". Direction: Down.");
                 }
+                time++;
             }
+            time = 1;
             treeTraverse = tree;
             System.out.println("\n");
+
         }
 
 

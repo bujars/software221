@@ -11,8 +11,8 @@ public class Test {
         int p = input.nextInt();
         int i = input.nextInt();
 
-        Navigator nav = new Navigator(d, p, i);
-        nav.navigate();
+        Navigator nav = new Navigator();
+        nav.navigate(d, p, i);
 
 
 

@@ -19,16 +19,16 @@ public final class BinaomialTreeFactory {
     I need it to. With that said, we only need to return a node from this class, because a tree is just a node??????
     noooooo idk this might also need to implement iterator functions. */
 
-
+/*
     private Node root; //no becuse how do we traverse it? Navigate???? Where do the go left/go right functions go????
     private int depth;
     private int percentage;
-
+*/
 
     // I think they just go in navigate??
 
 
-    public BinaomialTreeFactory(int T, int P){
+   /* public BinaomialTreeFactory(int T, int P){
         this.depth = T;
         this.percentage = P;
     }
@@ -45,7 +45,7 @@ public final class BinaomialTreeFactory {
         this.root = root;
     }
 
-
+    */
 
     /*This is the recursive function that creates the node????*/
     public static Node create(int T, int P){

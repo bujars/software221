@@ -15,8 +15,12 @@ public class Textbook extends Item{
         this.author = author;
     }
 
-    @Override
-    public int compareTo(Item textbook) { return this.getId().compareTo(textbook.getId()); }
+    /*NOTE originall assumed to override compareTo for something like author,
+    but it doesnt work because an Item cannot access it's childrens mehtods.
+    Then i tired chaning the object to item, but that doesnt work either
+    because this has to override item. */
+
+
     @Override
     public String toString(){
         return super.toString() + " Author: " + getAuthor();

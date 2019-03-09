@@ -69,15 +69,15 @@ public class Test {
         library.list();
 
         // sort by other fields
-        System.out.println("----- DATABASE AFTER SORTING BY OTHER FIELDS: -----");
-        System.out.println("------------ (title, addedOn, director) -----------\n");
-        chain.addComparator(new sortByTitle());
+       // System.out.println("----- DATABASE AFTER SORTING BY OTHER FIELDS: -----");
+        //System.out.println("------------ (title, addedOn, director) -----------\n");
+        /*chain.addComparator(new sortByTitle());
         chain.addComparator(new sortByAddedOn());
         chain.addComparator(new sortByDirector());
         tempArray = library.getItem();
         Collections.sort(tempArray, chain);
         library.setItem(tempArray);
-        library.list();
+        library.list();*/
     }
 
 

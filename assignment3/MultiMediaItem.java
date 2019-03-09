@@ -17,7 +17,6 @@ public abstract class MultiMediaItem extends Item{
         this.playingTime = playingTime;
     }
 
-    public abstract int compareTo(Item multiMediaItem);
 
     @Override
     public String toString(){

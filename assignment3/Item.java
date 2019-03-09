@@ -1,5 +1,7 @@
 import java.util.Date;
 
+
+/*NOTE took me a while to get this, must specify object type else sort will not know what an Item is*/
 public abstract class Item implements Comparable<Item>{
     private String id;
     private String title;
@@ -43,7 +45,9 @@ public abstract class Item implements Comparable<Item>{
         this.title = title;
     }
 
-    public abstract int compareTo(Item item);
+    public int compareTo(Item item){
+        return this.getId().compareTo(item.getId());
+    }
 
     public String toString(){
         return "Id: " + getId() + " Title: " + getTitle() + " Added ON: " + getAddedOn();

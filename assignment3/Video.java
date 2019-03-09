@@ -15,10 +15,11 @@ public class Video extends MultiMediaItem{
         this.director = director;
     }
 
-    @Override
-    public int compareTo(Item video){
-        return this.getId().compareTo(video.getId());
-    }
+
+    /*NOTE originall assumed to override compareTo for something like director,
+    but it doesnt work because an Item cannot access it's childrens mehtods.
+    Then i tired chaning the object to item, but that doesnt work either
+    because this has to override item. */
 
     @Override
     public String toString(){

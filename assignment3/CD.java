@@ -15,8 +15,11 @@ public class CD extends MultiMediaItem{
         this.artist = artist;
     }
 
-    @Override
-    public int compareTo(Item cd) { return this.getId().compareTo(cd.getId()); }
+    /*NOTE originall assumed to override compareTo for something like artist,
+    but it doesnt work because an Item cannot access it's childrens mehtods.
+    Then i tired chaning the object to item, but that doesnt work either
+    because this has to override item. */
+
 
     @Override
     public String toString(){

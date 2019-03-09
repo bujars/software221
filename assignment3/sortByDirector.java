@@ -1,7 +1,7 @@
 import java.util.Comparator;
 
 /*NOTE this class is just a method that compares two titles with each other, nothing more. */
-public class sortByTitle implements Comparator {
+public class sortByDirector implements Comparator {
     @Override
     public int compare(Object objectOne, Object objectTwo) {
         /*First we check that the objects put in are actually a string*/

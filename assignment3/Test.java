@@ -59,25 +59,26 @@ public class Test {
 
         /* NOTE NOTE NOTE, THE ITEM[] MUST BE PYBLIC SO I WILL USE A GET AND SET METHOD. AND MAKE A TEMPORARY VARIABLE. */
 
-        ArrayList<Item> tempArray = library.getItem();
+
+        /*NOTEE Updated my above statement^. sort allows me to change the values in the array thorught getArray.*/
+
 
         // sort and print sorted database (by id)
-        Collections.sort(tempArray); /*NOTE PROFESSOR SAID THIS NEEDS TO BE PRIVATE.*/
+        Collections.sort(library.getItem()); /*NOTE PROFESSOR SAID THIS NEEDS TO BE PRIVATE.*/
         System.out.println("----- DATABASE AFTER SORTING BY ID (default): -----\n");
 
-        library.setItem(tempArray);
         library.list();
 
         // sort by other fields
-       // System.out.println("----- DATABASE AFTER SORTING BY OTHER FIELDS: -----");
-        //System.out.println("------------ (title, addedOn, director) -----------\n");
-        /*chain.addComparator(new sortByTitle());
+        System.out.println("----- DATABASE AFTER SORTING BY OTHER FIELDS: -----");
+        System.out.println("------------ (title, addedOn, director) -----------\n");
+        chain.addComparator(new sortByTitle());
         chain.addComparator(new sortByAddedOn());
         chain.addComparator(new sortByDirector());
-        tempArray = library.getItem();
-        Collections.sort(tempArray, chain);
-        library.setItem(tempArray);
-        library.list();*/
+        //tempArray = library.getItem();
+        Collections.sort(library.getItem(), chain);
+        //library.setItem(tempArray);
+        library.list();
     }
 
 

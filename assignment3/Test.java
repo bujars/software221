@@ -46,7 +46,12 @@ public class Test {
 
         cal.set(2000, Calendar.FEBRUARY, 29);
         date = (Date) cal.getTime();
-        library.addItem(new CD("CD05", "CD1", date, 1000, "B.C."));
+        library.addItem(new CD("CD05", "CD", date, 1000, "B.D."));
+
+
+        cal.set(2000, Calendar.FEBRUARY, 29);
+        date = (Date) cal.getTime();
+        library.addItem(new CD("CD05", "CD", date, 1000, "B.C."));
 
         cal.set(1890, Calendar.JULY, 2);
         date = (Date) cal.getTime();
@@ -72,7 +77,7 @@ public class Test {
         // sort by other fields
         System.out.println("----- DATABASE AFTER SORTING BY OTHER FIELDS: -----");
         System.out.println("------------ (title, addedOn, director) -----------\n");
-        chain.addComparator(new sortByTitle());
+        //chain.addComparator(new sortByTitle());
         chain.addComparator(new sortByAddedOn());
         chain.addComparator(new sortByDirector());
         //tempArray = library.getItem();

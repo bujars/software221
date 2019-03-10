@@ -6,7 +6,7 @@ public abstract class MultiMediaItem extends Item{
     /* NOTE uml says Intger and not int. Therefore assumption is made for Integer wrapper*/
     public MultiMediaItem(String id, String title, Date addedOn, Integer playingTime){
         super(id, title, addedOn);
-        this.playingTime = new Integer(playingTime);
+        this.playingTime = playingTime;
     }
 
     public Integer getPlayingTime() {

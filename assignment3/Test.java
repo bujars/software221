@@ -79,8 +79,8 @@ public class Test {
         System.out.println("------------ (title, addedOn, director) -----------\n");
 
         chain.addComparator(new sortByTitle());
-        chain.addComparator(new sortByAddedOn());
-        chain.addComparator(new sortByDirector());
+        //chain.addComparator(new sortByAddedOn());
+        //chain.addComparator(new sortByDirector());
         //tempArray = library.getItem();
         Collections.sort(library.getItem(), chain);
         //library.setItem(tempArray);

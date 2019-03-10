@@ -44,14 +44,14 @@ public class Test {
         date = (Date) cal.getTime() ;
         library.addItem(new CD("CD10", "CD1", date, 800, "X.Y."));
 
-        cal.set(2000, Calendar.FEBRUARY, 29);
+        cal.set(2000, Calendar.FEBRUARY, 27);
         date = (Date) cal.getTime();
-        library.addItem(new CD("CD05", "CD", date, 1000, "B.D."));
+        library.addItem(new CD("CD05", "CD1", date, 1000, "B.D."));
 
 
-        cal.set(2000, Calendar.FEBRUARY, 29);
+        cal.set(2000, Calendar.FEBRUARY, 28);
         date = (Date) cal.getTime();
-        library.addItem(new CD("CD05", "CD", date, 1000, "B.C."));
+        library.addItem(new CD("CD05", "CD1", date, 1000, "B.C."));
 
         cal.set(1890, Calendar.JULY, 2);
         date = (Date) cal.getTime();
@@ -79,7 +79,7 @@ public class Test {
         System.out.println("------------ (title, addedOn, director) -----------\n");
 
         chain.addComparator(new sortByTitle());
-        //chain.addComparator(new sortByAddedOn());
+        chain.addComparator(new sortByAddedOn());
         //chain.addComparator(new sortByDirector());
         //tempArray = library.getItem();
         Collections.sort(library.getItem(), chain);

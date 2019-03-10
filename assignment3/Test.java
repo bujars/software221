@@ -26,6 +26,10 @@ public class Test {
         // adding database entries
         cal.set(1890, Calendar.AUGUST, 10);
         Date date = (Date) cal.getTime();
+        library.addItem(new Textbook("TB15", "TextX", date, "John Doen"));
+
+        cal.set(1890, Calendar.AUGUST, 10);
+         date = (Date) cal.getTime();
         library.addItem(new Textbook("TB15", "TextX", date, "John Doe"));
 
         cal.set(1954, Calendar.JANUARY, 18);
@@ -36,9 +40,9 @@ public class Test {
         date = (Date) cal.getTime() ;
         library.addItem(new Textbook("TB01", "TextY", date, "John Doe"));
 
-        cal.set(2000, Calendar.FEBRUARY, 29);
+        cal.set(2000, Calendar.FEBRUARY, 28);
         date = (Date) cal.getTime() ;
-        library.addItem(new CD("CD07", "CD1", date, 1000, "B.D."));
+        library.addItem(new CD("CD07", "CD1", date, 1000, "B.B."));
 
         cal.set(1990, Calendar.APRIL, 30);
         date = (Date) cal.getTime() ;
@@ -46,7 +50,7 @@ public class Test {
 
         cal.set(2000, Calendar.FEBRUARY, 27);
         date = (Date) cal.getTime();
-        library.addItem(new CD("CD05", "CD1", date, 1000, "B.D."));
+        library.addItem(new CD("CD05", "CD2", date, 1000, "B.D."));
 
 
         cal.set(2000, Calendar.FEBRUARY, 28);
@@ -80,7 +84,9 @@ public class Test {
         //chain.addComparator(new sortById());
         chain.addComparator(new sortByTitle());
         chain.addComparator(new sortByAddedOn());
-        chain.addComparator(new sortByDirector());
+        //chain.addComparator(new sortByArtist());
+        chain.addComparator(new sortByAuthor());
+        //chain.addComparator(new sortByDirector());
         //tempArray = library.getItem();
         Collections.sort(library.getItem(), chain);
         //library.setItem(tempArray);

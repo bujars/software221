@@ -77,7 +77,7 @@ public class Test {
         // sort by other fields
         System.out.println("----- DATABASE AFTER SORTING BY OTHER FIELDS: -----");
         System.out.println("------------ (title, addedOn, director) -----------\n");
-
+        //chain.addComparator(new sortById());
         chain.addComparator(new sortByTitle());
         chain.addComparator(new sortByAddedOn());
         chain.addComparator(new sortByDirector());

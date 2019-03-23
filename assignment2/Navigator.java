@@ -7,9 +7,11 @@ public class Navigator {
 
     public void navigate(Node tree, int iterations) {
         Node treeTraverse = tree; /*This will be used to go back and fourth.*/
-
+        int iteration = 1;
         int time = 1;
         for(int i = 0; i < iterations; i++){
+
+            System.out.println("Iteration: " + iteration);
             while(treeTraverse!=null){ /*NOTE THIS ends before end.*/
                 SecureRandom random = new SecureRandom();
                 int rand = random.nextInt(101);
@@ -26,6 +28,7 @@ public class Navigator {
             time = 1;
             treeTraverse = tree;
             System.out.println("\n");
+            iteration++;
 
         }
 

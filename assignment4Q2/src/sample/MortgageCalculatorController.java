@@ -3,6 +3,9 @@
  */
 
 import java.math.BigDecimal; /*This is because price is monitary*/
+
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent; /*This needs to be imported to handle events, such as a button click*/
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
@@ -31,7 +34,7 @@ public class MortgageCalculatorController{
     private Slider yearAmountSlider; // Value injected by FXMLLoader
 
     /*This will store the slider value. Its preinitalized to default*/
-    private BigDecimal yearAmount = new BigDecimal(20);
+    private BigDecimal yearAmount = new BigDecimal(15);
 
     /*Note this function is so that we can convert our BigDecimal Result into a string to be printed*/
     private static final NumberFormat currency = NumberFormat.getCurrencyInstance();
@@ -51,21 +54,69 @@ public class MortgageCalculatorController{
 
             /*NOTE still not sure why I have two different down payments but was listed in the instructions.*/
             BigDecimal downPaymentAmount = new BigDecimal(downPaymentAmountTextField.getText());
-            BigDecimal downPayment = new BigDecimal(downPaymentTextField.getText());
+            BigDecimal principalAmount = purchasePrice.subtract(downPaymentAmount);
+
+            if(downPaymentAmount.intValue() > purchasePrice.intValue()){
+                throw new NumberFormatException("");
+            }
+
             BigDecimal interestRate = new BigDecimal(interestRateTextField.getText());
-            BigDecimal result = downPayment.add(downPaymentAmount);
+
+            /**Interest rate is a percentage, so convert to decimal, and then divide by the number of months in a year.*/
+            interestRate = interestRate.divide(new BigDecimal("12"), 8, RoundingMode.HALF_UP).divide(new BigDecimal("100" ), 8, RoundingMode.HALF_UP);
+            BigDecimal month = yearAmount.multiply(new BigDecimal("12"));
+            BigDecimal rPlus1 = interestRate.add(new BigDecimal("1"));
+            BigDecimal rPlus1Pow = rPlus1.pow(month.intValue());
+            BigDecimal denomiator = rPlus1Pow.subtract(new BigDecimal("1.0"));
+            BigDecimal numerator = rPlus1Pow.multiply(interestRate);
+            BigDecimal rate = numerator.divide(denomiator, 8, RoundingMode.HALF_UP);
+            BigDecimal result = principalAmount.multiply(rate);
+
+            System.out.println(purchasePrice);
+            System.out.println(downPaymentAmount);
+            System.out.println(principalAmount);
+            System.out.println(interestRate);
+            System.out.println(rPlus1);
+            System.out.println(rPlus1Pow);
+            System.out.println(denomiator);
+            System.out.println(numerator);
+            System.out.println(rate);
+            System.out.println(result);
+            System.out.println(month);
+
+            /*
+            int month = 360;
+            BigDecimal numerator = interestRate.multiply((interestRate.add((BigDecimal) 1.0)).pow(months));
+            BigDecimal denominator= (interestRate.add(1)).pow(month);
+
+            BigDecimal result = downPaymentAmount;
             result = result.add(purchasePrice);
             result = result.add(interestRate);
-
+*/
+            //BigDecimal result = downPaymentAmount;
             monthlyAmountTextField.setText(currency.format(result));
-        } catch(NumberFormatException num){
-
+        } catch(NumberFormatException | ArithmeticException num){
+            /**If user decides to enter data that isnt compatible, catch the error and refocus to the top. */
+            purchasePriceTextField.setText("Enter amount, value only");
+            downPaymentAmountTextField.setText("Enter amount, value only");
+            interestRateTextField.setText("Enter amount, value only");
+            purchasePriceTextField.selectAll();
+            purchasePriceTextField.requestFocus();
         }
     }
 
     /* NOTE function initiate looks to see if the slider is changed, and changes the  yearAmountSlider value accordingly.*/
-    public void initiate() {
+    public void initialize() {
+        /** Set the rounding mode for the money. 5+ = 1 0-4 = 0  */
+        currency.setRoundingMode(RoundingMode.HALF_UP);
 
+        /**As the user changes the slider, we must listen and change the value of the year to the appropriate amount chosen.*/
+        yearAmountSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                yearAmount = BigDecimal.valueOf(newValue.intValue());
+            }
+        });
     }
 
 }

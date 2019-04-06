@@ -62,6 +62,11 @@ public class MortgageCalculatorController{
 
             BigDecimal interestRate = new BigDecimal(interestRateTextField.getText());
 
+            if (!(purchasePrice.compareTo(BigDecimal.ZERO) > 0) || !(downPaymentAmount.compareTo(BigDecimal.ZERO) > 0) || !(interestRate.compareTo(BigDecimal.ZERO) > 0)) {
+                throw new NumberFormatException("Values must be positive");
+            }
+
+
             /**Interest rate is a percentage, so convert to decimal, and then divide by the number of months in a year.*/
             interestRate = interestRate.divide(new BigDecimal("12"), 8, RoundingMode.HALF_UP).divide(new BigDecimal("100" ), 8, RoundingMode.HALF_UP);
             BigDecimal month = yearAmount.multiply(new BigDecimal("12"));

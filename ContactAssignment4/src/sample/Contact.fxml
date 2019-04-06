@@ -6,15 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ContactController">
-   <left>
-      <ListView fx:id="contactListView" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-         </padding>
-      </ListView>
-   </left>
    <center>
       <GridPane fx:id="contactGridPane" hgap="8.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -63,4 +55,20 @@
          </children>
       </GridPane>
    </center>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="contactListView" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="373.0" prefWidth="133.0">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+            </ListView>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button fx:id="newButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#newButtonActionEvent" text="New" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
 </BorderPane>

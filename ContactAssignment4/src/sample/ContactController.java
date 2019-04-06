@@ -58,6 +58,9 @@ public class ContactController {
     @FXML // fx:id="deteleButton"
     private Button deteleButton; // Value injected by FXMLLoader
 
+    @FXML
+    private Button newButton;
+
 
     /** Create an ObservableList, which is like an ArrayList except
      * the content can be observed, which means binded/listened to. */
@@ -73,6 +76,14 @@ public class ContactController {
         /** Add initial Contacts here as example. Follow Structure. Try to keep the size as close to 100*100 for clear view */
         contactList.add(new Contact("Bujar", "Sefa", "9178567401","bsefa000@citymail.cuny.edu", "./sample/images/bujar.png"));
         contactList.add(new Contact("Kanchan", "Gondiker", "NA", "kgondik000@citymail.cuny.edu", "./sample/images/kanchangondiker.png"));
+        contactList.add(new Contact("Kartikeya", "Sharma", "917917917","ksharma000@citymail.cuny.edu", "./sample/images/kartikeya.png"));
+        contactList.add(new Contact("Maya", "Pasiliao", "9178567111","mpasiliao000@citymail.cuny.edu", "./sample/images/maya.png"));
+        contactList.add(new Contact("Danish", "Pastry", "98567401801","dfaruqi000@citymail.cuny.edu", "./sample/images/danish.png"));
+        contactList.add(new Contact("Hamzah", "Saleh", "7188567401","hsaleh000@citymail.cuny.edu", "./sample/images/hamzah.png"));
+        contactList.add(new Contact("Mayra", "Sanchez", "9175557891","msanchez000@citymail.cuny.edu", "./sample/images/mayra.png"));
+        contactList.add(new Contact("Denny", "Liang", "2128567401","dliang000@citymail.cuny.edu", "./sample/images/denny.png"));
+        contactList.add(new Contact("Taehun", "Lim", "6468567401","tlim000@citymail.cuny.edu", "./sample/images/taehun.png"));
+        contactList.add(new Contact("Varun", "Chenna", "2208567401","vchenna000@citymail.cuny.edu", "./sample/images/varun.png"));
 
 
         /** Add the contact List to the view. ==> This binds the View to the ObservableList.
@@ -276,6 +287,16 @@ public class ContactController {
         contactListView.refresh();
 
 
+    }
+
+    @FXML
+    void newButtonActionEvent(ActionEvent event) {
+        firstNameTextField.setText("");
+        lastNameTextField.setText("");
+        phoneNumberTextField.setText("");
+        emailTextField.setText("");
+        imageTextField.setText("./sample/images/default.png");
+        contactImageView.setImage(new Image(imageTextField.getText()));
     }
 
 }

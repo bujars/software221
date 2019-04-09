@@ -34,7 +34,7 @@ public class MortgageCalculatorController{
     private Slider yearAmountSlider; // Value injected by FXMLLoader
 
     /*This will store the slider value. Its preinitalized to default*/
-    private BigDecimal yearAmount = new BigDecimal(15);
+    private BigDecimal yearAmount = new BigDecimal(20);
 
     /*Note this function is so that we can convert our BigDecimal Result into a string to be printed*/
     private static final NumberFormat currency = NumberFormat.getCurrencyInstance();

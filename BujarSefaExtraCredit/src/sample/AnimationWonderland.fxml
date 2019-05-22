@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane id="Pane" prefHeight="601.0" prefWidth="603.0" stylesheets="@AnimationWonderland.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AnimationWonderlandController">
+<children>
+    <Rectangle fx:id="rectangleFillAndStroke" height="110.0" layoutX="74.0" layoutY="60.0" width="115.0" />
+
+    <Button fx:id="startButton" layoutX="27.0" layoutY="198.0" mnemonicParsing="false" onAction="#startButtonPressedFillAndStroke" prefHeight="27.0" prefWidth="209.0" text="Start Fill and Stroke Animation" textFill="#e80e0e" />
+
+
+    <Rectangle fx:id="rectangleFade" height="110.0" layoutX="423.0" layoutY="353.0" width="115.0" />
+
+    <Button fx:id="startButton2" layoutX="384.0" layoutY="501.0" mnemonicParsing="false" onAction="#startButtonPressedFade" prefHeight="27.0" prefWidth="190.0" text="Start Fade Animation" textFill="#e10346" />
+
+    <Rectangle fx:id="rectangleScale" height="110.0" layoutX="244.0" layoutY="246.0" width="115.0" />
+
+    <Button fx:id="startButton3" layoutX="227.0" layoutY="371.0" mnemonicParsing="false" onAction="#startButtonPressedScale" text="Start Scale Animation" textFill="#3c10bf" />
+
+    <Rectangle fx:id="rectangleRotate" fill="#f29f9f" height="110.0" layoutX="422.0" layoutY="60.0" width="115.0" />
+
+    <Button fx:id="startButton4" layoutX="401.0" layoutY="198.0" mnemonicParsing="false" onAction="#startButtonPressedRotate" text="Start Rotate Animation" textFill="#00ee20" />
+
+    <Rectangle fx:id="rectanglePath" height="110.0" layoutX="65.0" layoutY="353.0" width="115.0" />
+
+    <Button fx:id="startButton5" layoutX="28.0" layoutY="501.0" mnemonicParsing="false" onAction="#startButtonPressedPath" prefHeight="27.0" prefWidth="190.0" text="Start Path Animation" textFill="#948d07" />
+      <Label layoutX="197.0" layoutY="20.0" text="Animation Wonderland!" textFill="#10cd29">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="186.0" layoutY="47.0" text="Test out animations that you can use!" />
+
+
+</children>
+</Pane>
